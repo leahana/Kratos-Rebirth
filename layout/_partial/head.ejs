@@ -116,6 +116,9 @@
     <%- css_theme_cdn_async(`css/highlight/${config.syntax_highlighter}/${theme.syntax_highlighter.theme}.min.css`, {id: "highlight-css"}) %>
   <% } %>
   <%- js_theme_cdn('js/kr-theme.min.js') %>
+  <!-- Mermaid 图表库 + 初始化 -->
+  <%- js_npm_cdn('mermaid', 'dist/mermaid.min.js') %>
+  <%- js_theme_cdn('others/mermaid.js') %>
   <%- css_npm_cdn_async('font-awesome', 'css/font-awesome.min.css', {id:"fontawe-css"}) %>
   <% if (theme.pjax || theme.search.provider === "local") { %>
     <%- css_npm_cdn_async('nprogress', 'nprogress.css', {id:"nprogress-css"}) %>
