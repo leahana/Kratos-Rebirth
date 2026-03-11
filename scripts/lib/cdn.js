@@ -22,7 +22,9 @@ const css_preload_helper = (url, options) =>
   }${
     options?.crossorigin
       ? ' crossorigin="' + options.crossorigin + '"'
-      : " crossorigin" // 默认 crossorigin="anonymous" ，此处使用省略写法
+      : url.includes("//")
+        ? " crossorigin"
+        : "" // 仅对真实 CDN 链接默认 crossorigin
   }>`;
 
 // 异步 CSS 加载辅助函数，使用 media="print" + onload 技术，防止 CSS 阻塞初始渲染
